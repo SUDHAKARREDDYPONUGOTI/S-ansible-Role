@@ -7,7 +7,7 @@ INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipp
 HOSTER_ZONE_ID=Z04739421AO6YEL959JDA
 DOMAIN_NAME=devopslearnhub.online
 
-for i in "${INSTANCES}[@]"
+for i in "${INSTANCES[@]}"
 do 
     if [ $i = "mongodb"] || [ $i = "mysql"] || [ $i = "shipping"]
     then
