@@ -5,7 +5,7 @@
 
 - name: install mongodb
   ansible.builtin.package:
-    name: mongodb-org -y 
+    name: mongodb-org
     state: present
 
 - name: mongodb restart and enable
@@ -16,9 +16,14 @@
 
 - name: Replace the content in mongo.repo file
   ansible.builtin.replace:
-    path: /etc/yum.repos.d/mongo.repo
+    path: /etc/mongo.conf
     regexp: '120.0.0.1'
     replace: '0.0.0.0'
+
+- name: start and enable mongodb
+  ansible.builtin.service:
+    name: mongod
+    state: restarted
 
 
   
