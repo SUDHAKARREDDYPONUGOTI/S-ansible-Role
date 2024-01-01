@@ -1,0 +1,4 @@
+- name: Run tasks/other.yaml instead of 'main'
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup
